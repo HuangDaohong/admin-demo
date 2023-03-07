@@ -1,0 +1,61 @@
+.my-form {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.my-form-enter {
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.my-form-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.my-form-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.my-form-exit-active {
+    opacity: 0;
+    transform: translateY(-25px);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.float-login {
+    left: 60%;
+}
+
+.float-register {
+    left: 0%
+}
+
+.float-enter {
+    left: 0%;
+}
+
+.float-enter-active {
+    left: 60%;
+    transition: left 300ms;
+}
+
+.float-enter-done {
+    left: 60%;
+}
+
+.float-exit {
+    left: 60%;
+}
+
+.float-exit-active {
+    left: 0%;
+    transition: left 300ms;
+}
+
+.float-exit-done {
+    left: 0%;
+}
