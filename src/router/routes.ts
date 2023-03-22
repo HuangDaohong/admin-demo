@@ -59,7 +59,7 @@ const asyncRoutes: Route[] = [
         path: 'test1',
         name: 'Test1',
         meta: {
-            title: '测试1',
+            title: '功能模块',
             roles: ['user'],
             icon: createElement(ExperimentOutlined)
         },
@@ -73,7 +73,7 @@ const asyncRoutes: Route[] = [
                 meta: {
                     title: '测试2',
                     roles: ['user'],
-                    group: 'more'
+                    group: '烟火检测'
                 }
             },
             {
@@ -85,7 +85,7 @@ const asyncRoutes: Route[] = [
                 meta: {
                     title: '测试3',
                     roles: ['user'],
-                    group: 'test'
+                    group: '安全穿戴'
                 }
             },
             {
@@ -96,7 +96,8 @@ const asyncRoutes: Route[] = [
                 }),
                 meta: {
                     title: '测试4',
-                    roles: ['user']
+                    roles: ['user'],
+                    group: '安全穿戴'
                 }
             }
         ]
