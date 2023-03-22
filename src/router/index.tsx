@@ -5,25 +5,31 @@ import { useLocation } from 'react-router-dom'
 import Layout from '@/layout'
 
 import type { Route as R } from '@/types/router'
-import type { ReactNode } from 'react'
+// import type { ReactNode } from 'react'
 
-interface RouteProps {
-    path: string
-    element?: ReactNode
-}
+// interface RouteProps {
+//     path: string
+//     element?: ReactNode
+// }
 
 const renderRoutes = (routes: R[]) => {
     return routes.map(({ name, path, component: Com, children }) => {
-        const property: RouteProps = {
-            path
-        }
+        // const property: RouteProps = {
+        //     path
+        // }
 
-        if (Com) {
-            property.element = <Com />
-        }
+        // if (Com) {
+        //     property.element = <Com />
+        // }
+
+        // return (
+        //     <Route key={name} {...property}>
+        //         {children ? renderRoutes(children) : null}
+        //     </Route>
+        // )
 
         return (
-            <Route key={name} {...property}>
+            <Route key={name} path={path} element={Com ? <Com /> : undefined}>
                 {children ? renderRoutes(children) : null}
             </Route>
         )
@@ -33,7 +39,7 @@ const renderRoutes = (routes: R[]) => {
 const RouteTable = () => {
     const { fixedRoutes, asyncRoutes } = useStoreSelector('router')
     const location = useLocation()
-
+    //路由守卫
     useRouterGuard(location)
 
     return (

@@ -11,6 +11,10 @@ import { generateRoutes } from '@/router/utils'
 
 import type { Location } from 'react-router-dom'
 
+/**
+ * @description:  路由守卫
+ * @param {Location} to 跳转的路由
+ */
 const useRouterGuard = (to: Location) => {
     const { pathname } = useLocation()
     const { userInfo } = useStoreSelector('user')
@@ -18,12 +22,16 @@ const useRouterGuard = (to: Location) => {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        // 防止组件卸载后，异步请求还在执行
         let isCancelled = false
+
+        // 权限验证
         const permission = async () => {
             if (whiteList.includes(pathname)) return
 
             const token = getToken()
 
+            // if (!token) return <Navigate to="/login" replace />;
             if (token === null)
                 return navigate('/login', { replace: true, state: { to } })
 

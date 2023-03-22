@@ -27,4 +27,10 @@ const getUserInfo = () => {
     })
 }
 
-export { loginByUserName, getUserInfo, registerByUserName }
+const getColor = () => {
+    return service<string>({
+        url: '/api/colorconfig',
+        method: 'get'
+    })
+}
+export { loginByUserName, getUserInfo, registerByUserName, getColor }

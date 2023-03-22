@@ -1,19 +1,17 @@
 import { Layout, theme } from 'antd'
 import { AppMain, SideBar } from './components'
 
-import './styles.css'
+import './styles.less'
 
 const { Header, Content, Sider } = Layout
 
 const LayOut = () => {
-    const {
-        token: { colorBgContainer }
-    } = theme.useToken()
+    const { token } = theme.useToken()
     return (
         <Layout style={{ height: '100%' }}>
-            <Header style={{ backgroundColor: '#fff0f0' }}></Header>
+            <Header style={{ backgroundColor: '#fff0f0' }}>111</Header>
             <Layout>
-                <Sider style={{ background: colorBgContainer }}>
+                <Sider style={{ background: token.colorPrimary }}>
                     <SideBar />
                 </Sider>
                 <Layout>

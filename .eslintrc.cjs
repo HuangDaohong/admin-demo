@@ -19,7 +19,7 @@ module.exports = {
     plugins: ['@typescript-eslint', 'import', 'eslint-plugin-react'],
     rules: {
         'import/extensions': [
-            '0',
+            0,
             'ignorePackages',
             {
                 js: 'never',

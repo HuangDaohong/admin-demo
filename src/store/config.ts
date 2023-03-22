@@ -5,7 +5,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 export const configSlice = createSlice({
     name: 'config',
     initialState: {
-        color: '#9b59b6'
+        color: '#44c5d6'
     },
     reducers: {
         changeColor: (state, action: PayloadAction<string>) => {
